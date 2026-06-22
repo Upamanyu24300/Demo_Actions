@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          # Deliberately wrong: the project requires Python >=3.10 (see pyproject.toml),
+          # so `pip install .` below fails. PatchOps should bump this to 3.10.
+          python-version: '3.8'
+      - run: python -m pip install --upgrade pip
+      - run: pip install .
+      - run: python -c "import demo_pkg; print(demo_pkg.hello())"
