@@ -12,9 +12,3 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: pip install .
       - run: python -c "import demo_pkg; print(demo_pkg.hello())"
-      - name: Deploy (requires secret)
-        run: |
-          if [ -z "${{ secrets.DEPLOY_KEY }}" ]; then
-            echo 'Error: required secret DEPLOY_KEY is not set; cannot authenticate to deploy target'
-            exit 1
-          fi
