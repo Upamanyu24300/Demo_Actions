@@ -10,4 +10,4 @@ def handle_order(token: str, amount: int) -> str:
         return "401 Unauthorized"
     if amount <= 0:
         return "400 Bad Request"
-    return f"200 OK: charged {amount}
+    return f"200 OK: charged {amount}"
