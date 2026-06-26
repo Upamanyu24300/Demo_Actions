@@ -7,7 +7,6 @@ name = "demo-actions"
 version = "0.1.0"
 description = "PatchOps live demo: a deliberately-failing, fixable CI project."
 requires-python = ">=3.10"
-dependencies = ["patchops-nonexistent-package==9.9.9"]
 
 [tool.setuptools]
 packages = ["demo_pkg"]
